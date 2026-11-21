@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator</title>
+<style>
+body{font-family:Arial;background:#ecfdf5;padding:25px}
+main{max-width:450px;margin:auto;background:white;padding:25px;border-radius:15px}
+input{width:100%;padding:12px;margin:8px 0;box-sizing:border-box}
+button{width:100%;background:#059669;color:white;padding:14px;border:0;border-radius:8px;cursor:pointer}
+#result{background:#d1fae5;padding:20px;margin-top:20px;border-radius:8px;white-space:pre-line}
+</style>
+</head>
+<body>
+<main>
+<h1>Loan Calculator</h1>
+<p>Estimate your monthly loan payment.</p>
+<label>Loan Amount</label>
+<input id="amount" type="number" min="1" placeholder="Amount">
+<label>Annual Interest Rate (%)</label>
+<input id="rate" type="number" min="0" step="any" placeholder="Interest rate">
+<label>Loan Duration (Months)</label>
+<input id="months" type="number" min="1" placeholder="Months">
+<button onclick="calculate()">Calculate Payment</button>
+<div id="result">Your estimate will appear here.</div>
+<p>Estimate assumes fixed interest and monthly payments, excluding fees.</p>
+</main>
+<script>
+function calculate(){
+ const p=Number(document.getElementById("amount").value);
+ const rate=document.getElementById("rate").value;
+ const r=Number(rate)/1200;
+ const n=Number(document.getElementById("months").value);
+ const out=document.getElementById("result");
+ if(p<=0||rate===""||r<0||n<=0||!Number.isInteger(n)){
+  out.textContent="Enter valid loan details.";
+  return;
+ }
+ const payment=r===0?p/n:p*r/(1-Math.pow(1+r,-n));
+ out.textContent="Monthly Payment: "+payment.toFixed(2)+
+ "\nTotal Payment: "+(payment*n).toFixed(2)+
+ "\nTotal Interest: "+(payment*n-p).toFixed(2);
+}
+</script>
+</body>
+</html>
