@@ -1,23 +1,24 @@
-# Loan Calculator
+## Loan Calculation Guide
 
-A tool for estimating fixed-rate monthly loan payments.
+This application helps users estimate loan payments.
 
-## Features
+### Calculation Inputs
+- Loan principal
+- Annual interest rate
+- Loan duration
 
-- Monthly payment
-- Total repayment
-- Interest estimation
+### Calculation Results
+- Estimated monthly payment
+- Total repayment amount
+- Total interest amount
 
-## How to Use
+### Usage
+1. Enter the loan amount.
+2. Enter the annual interest rate.
+3. Select the loan duration.
+4. Calculate the estimated payment.
 
-Enter the loan amount, annual interest rate and duration.
+### Important Note
 
-## Technologies
-
-- HTML
-- CSS
-- JavaScript
-
-## Running Locally
-
-Open `index.html` in a modern web browser.
+Results are estimates and may differ
+from actual lender repayment schedules.
