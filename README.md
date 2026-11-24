@@ -22,3 +22,12 @@ This application helps users estimate loan payments.
 
 Results are estimates and may differ
 from actual lender repayment schedules.
+## Manual Testing Checklist
+
+- [ ] Calculate a loan with a zero interest rate.
+- [ ] Check a fixed-rate loan using known input values.
+- [ ] Reject zero or negative loan duration.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
